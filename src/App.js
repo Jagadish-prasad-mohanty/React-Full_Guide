@@ -1,5 +1,5 @@
 import './App.css';
-import ExpenseItem from './Components/ExpenseItem';
+import ExpenseItems from './Components/ExpenseItems';
 
 function App() {
   const expenseArray=[
@@ -28,12 +28,10 @@ function App() {
       price:450
     },
   ]
-
-  const expenseItems=expenseArray.map(item=><ExpenseItem key={item.id} title={item.title} price={item.price} date={item.date}/>)
   return (
     <div className="App">
       <h1>Hi there</h1>
-      {expenseItems}
+      <ExpenseItems expenseArray={expenseArray}/>
     </div>
   );
 }
