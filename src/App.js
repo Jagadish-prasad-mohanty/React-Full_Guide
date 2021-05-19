@@ -7,13 +7,13 @@ function App() {
     {
       id:1,
       title:"Car expense",
-      date:new Date(2021,5,13),
+      date:new Date(2019,5,13),
       price:294.67
     },
     {
       id:2,
       title:"Bike expense",
-      date:new Date(2021,5,13),
+      date:new Date(2019,5,13),
       price:291.34
     },
     {
@@ -25,7 +25,7 @@ function App() {
     {
       id:4,
       title:"House",
-      date:new Date(2021,5,13),
+      date:new Date(2020,5,13),
       price:450
     },
   ]
