@@ -3,11 +3,13 @@
     align-items: center;
     justify-content: space-between;
 }
-.expense-filter>h4{
+.expense-filter>label{
+    font-size: 1rem;
+    font-weight: bold;
     color: white;
 }
 .expense-filter__select{
-    padding: 5px 7px;
+    padding: 7px 15px;
     font-size: 1rem;
     border: none;
     outline: none;
