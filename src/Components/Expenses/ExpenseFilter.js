@@ -5,6 +5,7 @@ function ExpenseFilter(props) {
     const dropDownChangeHandler=event=>{
         event.preventDefault();
         props.onChangeFilter(event.target.value);
+        
     }
     return (
         <div className="expense-filter">

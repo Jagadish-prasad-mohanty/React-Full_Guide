@@ -10,12 +10,12 @@
 .new-expense button{
     border: 1px solid #40005d;
     background-color: #40005d;
-    margin-right: 2rem;
     color: white;
     border-radius: 10px;
     padding: 0.6rem 1.5rem;
     cursor: pointer;
     font: inherit;
+    margin-right: 1rem;
 }
 
 .new-expense button:hover,

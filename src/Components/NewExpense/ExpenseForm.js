@@ -55,7 +55,18 @@ function ExpenseForm(props) {
         // console.log(enteredAmount);
         // console.log(enteredDate);
     }
+
+    const [showForm,setShowForm]=useState(false);
+    const showAddForm=(e)=>{
+        e.preventDefault();
+        setShowForm(prevState=>{
+            return !prevState;
+        })
+
+    }
     return (
+        <div>
+        {!showForm?<button  className="new-expense__action" onClick={showAddForm}>Add New Expense</button>:
         <form onSubmit={submitHandler}>
             <div className="new-expense__controls">
                 <div className="new-expense__control">
@@ -71,10 +82,17 @@ function ExpenseForm(props) {
                     <input type="date" min="2019-01-01" max="2022-12-31" onChange={dateChangeHandler} value={enteredDate}/>
                 </div>
             </div>
-            <div className="new-expense__action">
-                <button type="submit">Add Expense</button>
+            <div className="new-expense__actions">
+
+                <div className="new-expense__action">
+                    <button type='reset' onClick={showAddForm}>Cancle</button>
+                </div>
+                <div className="new-expense__action">
+                    <button type="submit">Add Expense</button>
+                </div>
             </div>
-        </form>
+        </form>}
+        </div>
     )
 }
 
