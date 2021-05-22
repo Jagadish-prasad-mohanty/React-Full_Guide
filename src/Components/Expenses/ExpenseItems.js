@@ -3,26 +3,22 @@ import ExpenseList from './ExpenseList';
 import './ExpenseItems.css';
 import Card from  '../../UI/Card';
 import ExpenseFilter from './ExpenseFilter';
+import ExpenseChart from '../Chart/ExpenseChart';
 
 function ExpenseItems(props) {
-    const [expenseItems,setExpenseItems]=useState(props.expensesData);
+    const [expenseYear,setExpenseYear]=useState("select--");
     const filterChangeHandler= year=>{
-        console.log("[ExpenseItems.js]...",year);
-        if (year==="select--"){
-            setExpenseItems(props.expensesData);
-        }
-        else{
-            setExpenseItems(props.expensesData.filter(item=>item.date.getFullYear()===+year)); 
-        }
+        setExpenseYear(year);
     }
     
-    
-    
-    
+    const filteredItems=(expenseYear==="select--")?props.expensesData:props.expensesData.filter(item=>item.date.getFullYear().toString()===expenseYear)
     return (
         <Card className="expense">
-            <ExpenseFilter onChangeFilter={filterChangeHandler}/>
-            <ExpenseList items={expenseItems}/>
+            <ExpenseFilter 
+            expenseYear={expenseYear}
+            onChangeFilter={filterChangeHandler}/>
+            <ExpenseChart expenses={filteredItems}/>
+            <ExpenseList items={filteredItems}/>
         </Card>
     )
 }
